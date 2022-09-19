@@ -6,6 +6,6 @@ public class PizzaTester {
 
         Pizza cheesePizza = new Pizza("Dominos", 14, false);
         Pizza deepDishPep = new Pizza("Lou Malnatis", 14, 1, true);
-        // Is this in gitHub?
+        System.out.println(cheesePizza);
     }
 }
