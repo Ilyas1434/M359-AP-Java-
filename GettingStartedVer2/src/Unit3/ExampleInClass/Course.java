@@ -35,7 +35,7 @@ public class Course {
         this.teacherName = teacherName;
     }
     public boolean equals(Course other) {
-        if(this.getClassTitle().equals(other.getClassTitle())) && (this.getNumStudentsEnrolled().equals(other.getNumStudentsEnrolled()));
+        if(this.getClassTitle().equals(other.getClassTitle()))  (this.getNumStudentsEnrolled().equals(other.getNumStudentsEnrolled()));
 
     }
     public int compareTo(Course other) {
