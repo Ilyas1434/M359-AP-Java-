@@ -34,18 +34,27 @@ public class Course {
     public void setTeacherName(String teacherName) {
         this.teacherName = teacherName;
     }
+
     public boolean equals(Course other) {
         if(this.getClassTitle().equals(other.getClassTitle()))  (this.getNumStudentsEnrolled().equals(other.getNumStudentsEnrolled()));
 
+        if(this.getClassTitle().equals(other.getClassTitle())) {
+            if(this.getNumStudentsEnrolled() == other.getNumStudentsEnrolled()) {
+                return true;
+            }
+        }
+        return false;
     }
-    public int compareTo(Course other) {
-        int courseDiff = this.classTitle.compareTo(other.classTitle);
-        if (courseDiff != 0) {
-            return courseDiff;
+    public int compareTo(Course a) {
+        if(this.getClassTitle().compareTo(a.getClassTitle()) < 0 || ((this.getClassTitle().equals(a.getClassTitle())) && this.getNumStudentsEnrolled() < a.getNumStudentsEnrolled())) {
+            return -1;
         }
-        else {
-            return this.numStudentsEnrolled - other.numStudentsEnrolled;
+        if(this.getClassTitle().equals(a.getClassTitle()) && this.getNumStudentsEnrolled() == a.getNumStudentsEnrolled()) {
+            return 0;
         }
-
+        if(this.getClassTitle().compareTo(a.getClassTitle()) > 0 || ((this.getClassTitle().equals(a.getClassTitle())) && this.getNumStudentsEnrolled() > a.getNumStudentsEnrolled())) {
+            return 1;
+        }
+        return 0;
     }
 }
