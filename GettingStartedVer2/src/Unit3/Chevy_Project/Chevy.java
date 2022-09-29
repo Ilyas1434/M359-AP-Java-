@@ -1,5 +1,7 @@
 package Unit3.Chevy_Project;
 
+import Unit3.ExampleInClass.Shoe;
+
 public class Chevy {
     private int year;
     private int mileage;
@@ -42,9 +44,102 @@ public class Chevy {
         this.luxuryPackageStatus = luxuryPackageStatus;
         this.fourWDPackageStatus = fourWDPackageStatus;
         this.sportsPackageStatus = sportsPackageStatus;
+    }
+
+    public double getPriceWithUpgrades() {
+        return priceWithUpgrades;
+    }
+
+    public void setPriceWithUpgrades(double priceWithUpgrades) {
         this.priceWithUpgrades = priceWithUpgrades;
+    }
+
+    public double getGrandTotal() {
+        return grandTotal;
+    }
+
+    public void setGrandTotal(double grandTotal) {
         this.grandTotal = grandTotal;
     }
-    
 
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public int getMiles() {
+        return mileage;
+    }
+
+    public void setMiles(int mileage) {
+        this.mileage = mileage;
+    }
+
+    public double getMpg() {
+        return fuelEfficiency;
+    }
+
+    public void setMpg(double fuelEfficiency) {
+        this.fuelEfficiency = fuelEfficiency;
+    }
+
+    public double getBasePrice() {
+        return basePrice;
+    }
+
+    public void setBasePrice(double basePrice) {
+        this.basePrice = basePrice;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public boolean getLuxuryPkg() {
+        return luxuryPackageStatus;
+    }
+
+    public void setLuxuryPkg(boolean luxuryPackageStatus) {
+        this.luxuryPackageStatus = luxuryPackageStatus;
+    }
+
+    public boolean get4WDPkg() {
+        return fourWDPackageStatus;
+    }
+
+    public void set4WDPkg(boolean fourWDPackageStatus) {
+        this.fourWDPackageStatus = fourWDPackageStatus;
+    }
+
+    public boolean getSportsPkg() {
+        return sportsPackageStatus;
+    }
+
+    public void setHasSportsPkg(boolean sportsPackageStatus) {
+        this.sportsPackageStatus = sportsPackageStatus;
+    }
+    public int compareTo(Chevy other) {
+        if(this.getMiles()>other.getMiles()) {
+            return 1;
+        }
+        if(this.getMiles()<other.getMiles()) {
+            return -1;
+        }
+        return 0;
+    }
 }
