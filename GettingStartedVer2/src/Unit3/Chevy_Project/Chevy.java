@@ -1,7 +1,7 @@
 package Unit3.Chevy_Project;
 
 import Unit3.ExampleInClass.Shoe;
-
+// Sameer Ilyas, Per 8, Mrs. Denna
 public class Chevy {
     private int year;
     private int mileage;
@@ -133,6 +133,9 @@ public class Chevy {
     public void setHasSportsPkg(boolean sportsPackageStatus) {
         this.sportsPackageStatus = sportsPackageStatus;
     }
+    public String getMake() {
+        return MAKE;
+    }
     public int compareTo(Chevy other) {
         if(this.getMiles()>other.getMiles()) {
             return 1;
@@ -141,5 +144,46 @@ public class Chevy {
             return -1;
         }
         return 0;
+    }
+    public boolean equals(Chevy a) {
+        boolean thisNew = false;
+        boolean aNew = false;
+        if(this.getMiles() < 200) {
+            thisNew = true;
+        }
+        if(a.getMiles() < 200) {
+            aNew = true;
+        }
+        if((this.getModel().equals(a.getModel())) && this.getColor().equals(a.getColor())) {
+            if(aNew && thisNew) {
+                return true;
+            }
+        }
+        return false;
+    }
+    public String toString() {
+        String lx = "";
+        if(luxuryPackageStatus) {
+            lx = "Luxury Package";
+        }
+        String four = "";
+        if(fourWDPackageStatus) {
+            four = "4WD Package";
+        }
+        String sport = "";
+        if(sportsPackageStatus) {
+            sport = "Sports Package"
+        }
+        String str = "**************************************************";
+        str += "\n" + year + " " + MAKE + " " + model + " (" + color + ")";
+        str += "\n" + "    BASE PRICE:\t$" +  basePrice;
+        str += "\n" + "    MILES:\t" + mileage;
+        str += "\n" + "    FUEL EFFICIENCY:\t" + fuelEfficiency + " mpg";
+        str += "\n" + "    PACKAGES:";
+        str += "\n" + "        - " + lx;
+        str += "\n" + "        - " + four;
+        str += "\n" + "        - " + sport;
+
+        return str;
     }
 }
