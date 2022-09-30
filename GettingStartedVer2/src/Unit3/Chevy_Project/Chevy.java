@@ -2,6 +2,7 @@ package Unit3.Chevy_Project;
 
 import Unit3.ExampleInClass.Shoe;
 // Sameer Ilyas, Per 8, Mrs. Denna
+// Create folder, put pdf, .java, .java, and click send to zipped folder, and then submit zipped folder
 public class Chevy {
     private int year;
     private int mileage;
@@ -162,28 +163,36 @@ public class Chevy {
         return false;
     }
     public String toString() {
-        String lx = "";
-        if(luxuryPackageStatus) {
-            lx = "Luxury Package";
-        }
-        String four = "";
-        if(fourWDPackageStatus) {
-            four = "4WD Package";
-        }
-        String sport = "";
-        if(sportsPackageStatus) {
-            sport = "Sports Package"
-        }
+        String lx = "Luxury Package";
+        String four = "4WD Package";
+        String sport = "Sports Package";
         String str = "**************************************************";
         str += "\n" + year + " " + MAKE + " " + model + " (" + color + ")";
         str += "\n" + "    BASE PRICE:\t$" +  basePrice;
         str += "\n" + "    MILES:\t" + mileage;
         str += "\n" + "    FUEL EFFICIENCY:\t" + fuelEfficiency + " mpg";
         str += "\n" + "    PACKAGES:";
-        str += "\n" + "        - " + lx;
-        str += "\n" + "        - " + four;
-        str += "\n" + "        - " + sport;
-
+        // if no packages, print none
+        if(luxuryPackageStatus == false && fourWDPackageStatus == false && sportsPackageStatus == false) {
+            str += "\n" + "        - None";
+        }
+        if(luxuryPackageStatus) {
+            str += "\n" + "        - " + lx;
+        }
+        if(fourWDPackageStatus) {
+            str += "\n" + "        - " + four;
+        }
+        if(sportsPackageStatus) {
+            str += "\n" + "        - " + sport;
+        }
+        str += "\n\n\n";
+        str += "    PRICE WITH UPGRADES:\t$" + priceWithUpgrades;
+        str += "\n    FINAL PRICE WITH TAX:\t$" + grandTotal;
+        str += "**************************************************";
         return str;
     }
+
+
+
+
 }
