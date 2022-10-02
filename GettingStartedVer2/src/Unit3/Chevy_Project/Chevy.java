@@ -1,6 +1,6 @@
 package Unit3.Chevy_Project;
 
-import Unit3.ExampleInClass.Shoe;
+
 // Sameer Ilyas, Per 8, Mrs. Denna
 // Create folder, put pdf, .java, .java, and click send to zipped folder, and then submit zipped folder
 public class Chevy {
@@ -15,12 +15,14 @@ public class Chevy {
     private boolean sportsPackageStatus;
     private final String MAKE = "Chevrolet";
     private final double TAX_RATE = .122;
-    private final double LUX = 1.20;
+    private final double LUX = 0.20;
     private final int FOURWD_PRICE_INCREASE = 3500;
-    private final double SPORTS_BASE_INCREASE = 1.15;
+    private final double SPORTS_BASE_INCREASE = 0.15;
     private final double SPORTS_FUEL_DECREASE = .80;
     private double priceWithUpgrades;
     private double grandTotal;
+
+
     public Chevy() {
         color = "White";
         year = 2021;
@@ -28,8 +30,8 @@ public class Chevy {
         mileage = 0;
         basePrice = 16000;
         fuelEfficiency = 35.0;
-        grandTotal = 1600;
-        priceWithUpgrades = 1600;
+        grandTotal = 16000;
+        priceWithUpgrades = 16000;
         luxuryPackageStatus = false;
         fourWDPackageStatus = false;
         sportsPackageStatus = false;
@@ -48,6 +50,7 @@ public class Chevy {
     }
 
     public double getPriceWithUpgrades() {
+        calcPrice();
         return priceWithUpgrades;
     }
 
@@ -56,6 +59,7 @@ public class Chevy {
     }
 
     public double getGrandTotal() {
+        calcPrice();
         return grandTotal;
     }
 
@@ -163,13 +167,14 @@ public class Chevy {
         return false;
     }
     public String toString() {
+        calcPrice();
         String lx = "Luxury Package";
         String four = "4WD Package";
         String sport = "Sports Package";
         String str = "**************************************************";
         str += "\n" + year + " " + MAKE + " " + model + " (" + color + ")";
-        str += "\n" + "    BASE PRICE:\t$" +  basePrice;
-        str += "\n" + "    MILES:\t" + mileage;
+        str += "\n" + "    BASE PRICE:\t\t\t$" +  basePrice;
+        str += "\n" + "    MILES:\t\t\t\t" + mileage;
         str += "\n" + "    FUEL EFFICIENCY:\t" + fuelEfficiency + " mpg";
         str += "\n" + "    PACKAGES:";
         // if no packages, print none
@@ -185,11 +190,26 @@ public class Chevy {
         if(sportsPackageStatus) {
             str += "\n" + "        - " + sport;
         }
-        str += "\n\n\n";
+        str += "\n\n";
         str += "    PRICE WITH UPGRADES:\t$" + priceWithUpgrades;
         str += "\n    FINAL PRICE WITH TAX:\t$" + grandTotal;
-        str += "**************************************************";
+        str += "\n" + "**************************************************";
         return str;
+    }
+    public void calcPrice() {
+        priceWithUpgrades += basePrice;
+        if(fourWDPackageStatus) {
+            priceWithUpgrades += FOURWD_PRICE_INCREASE;
+        }
+        if(luxuryPackageStatus) {
+            priceWithUpgrades += basePrice * LUX;
+        }
+        if(sportsPackageStatus) {
+            priceWithUpgrades += basePrice * SPORTS_BASE_INCREASE;
+            fuelEfficiency = fuelEfficiency*SPORTS_FUEL_DECREASE;
+        }
+        grandTotal = priceWithUpgrades * TAX_RATE;
+        grandTotal = priceWithUpgrades + grandTotal;
     }
 
 
