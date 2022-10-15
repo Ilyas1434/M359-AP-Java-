@@ -38,10 +38,6 @@ public class StringAlgorithms {
             System.out.println(animal.substring(0, i + 1));
         }
 
-
-
-
-
         // PART III
         String phrase = "Mary had a little lamb, little lamb, little lamb";
         phrase += "Mary had a little lamb, its fleece was white as snow";
