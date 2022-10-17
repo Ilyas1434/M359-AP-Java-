@@ -55,7 +55,7 @@ public class StringAlgorithms {
         // create a new String, or modify the existing String, that removes
         // the word "little" entirely
         String actual = "";
-        for(int i = 0; i < phrase.length(); i++) {
+          for(int i = 0; i < phrase.length(); i++) {
             if(phrase.indexOf("little") != i) {
                 char temp = phrase.charAt(i);
 
