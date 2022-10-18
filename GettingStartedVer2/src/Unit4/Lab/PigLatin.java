@@ -1,14 +1,22 @@
 package Unit4.Lab;
 
+import java.util.Locale;
 import java.util.Objects;
 
 public class PigLatin {
     public static void main(String[] args) {
-        System.out.println(translateWordToPigLatin("BLACK"));
+        System.out.println(toPigLatin(""));
     }
-    public static String toPigLatin() {
-        String retString = "";
-        return retString;
+    public static String toPigLatin(String str) {
+        int count = 0;
+        str = str.toLowerCase();
+        for(int i = 0; i < str.length(); i++) {
+            while(str.charAt(i) != ' ') {
+                count++;
+            }
+        }
+
+
     }
     public static String translateWordToPigLatin(String str) {
         String retString = "";
