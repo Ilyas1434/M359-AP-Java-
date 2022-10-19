@@ -1,23 +1,20 @@
 package Unit4.Lab;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
-
+//Hello this is a test string for me to act upon
 public class PigLatin {
     public static void main(String[] args) {
-        System.out.println(toPigLatin(""));
+        System.out.println(toPigLatin("YES"));
     }
     public static String toPigLatin(String str) {
-        int count = 0;
-        str = str.toLowerCase();
-        for(int i = 0; i < str.length(); i++) {
-            while(str.charAt(i) != ' ') {
-                count++;
-            }
-        }
-
-
+        // Find all occurrences of spaces in str
+        // for each
+        return str;
     }
+
     public static String translateWordToPigLatin(String str) {
         String retString = "";
         boolean lowerVowels = str.charAt(0) == 'a' || str.charAt(0) == 'e' || str.charAt(0) == 'i' || str.charAt(0) == 'o' || str.charAt(0) == 'u';
