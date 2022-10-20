@@ -7,12 +7,21 @@ import java.util.Objects;
 //Hello this is a test string for me to act upon
 public class PigLatin {
     public static void main(String[] args) {
-        System.out.println(toPigLatin("YES"));
+        System.out.println(toPigLatin("The banana and the monkey"));
     }
     public static String toPigLatin(String str) {
-        // Find all occurrences of spaces in str
-        // for each
-        return str;
+        String ret = "";
+        str = str.toLowerCase();
+        while(str.indexOf(" ") != -1) {
+            int i = str.indexOf(" ");
+            ret += translateWordToPigLatin(str.substring(0, i));
+            ret += " ";
+            str = str.substring(i + 1);
+        }
+        char firstLetter = ret.charAt(0);
+        String first = Character.toString(firstLetter);
+        return ret;
+
     }
 
     public static String translateWordToPigLatin(String str) {
