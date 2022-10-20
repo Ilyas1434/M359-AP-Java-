@@ -1,6 +1,6 @@
 package Unit4.Lab;
 
-/* import static org.junit.Assert.assertEquals;
+ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.After;
 import org.junit.Test;
@@ -100,5 +100,5 @@ public class PigLatinJUnitTest {
 
 
 }
-*\
- */
+
+

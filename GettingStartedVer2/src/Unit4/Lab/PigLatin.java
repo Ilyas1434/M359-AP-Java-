@@ -7,7 +7,7 @@ import java.util.Objects;
 //Hello this is a test string for me to act upon
 public class PigLatin {
     public static void main(String[] args) {
-        System.out.println(toPigLatin("The banana and the monkey"));
+        System.out.println(toPigLatin("The black cat"));
     }
     public static String toPigLatin(String str) {
         String ret = "";
@@ -18,8 +18,11 @@ public class PigLatin {
             ret += " ";
             str = str.substring(i + 1);
         }
+        ret += translateWordToPigLatin(str);
         char firstLetter = ret.charAt(0);
         String first = Character.toString(firstLetter);
+        first = first.toUpperCase();
+        ret = first + ret.substring(1);
         return ret;
 
     }
@@ -31,7 +34,7 @@ public class PigLatin {
         if(lowerVowels || capitalVowels) {
             retString = str + "yay";
         }
-        if(!lowerVowels || !capitalVowels) {
+        else {
             // This will be inside a helper method
             retString = consonantFirst(str);
         }
