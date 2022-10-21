@@ -6,9 +6,6 @@ import java.util.Locale;
 import java.util.Objects;
 //Hello this is a test string for me to act upon
 public class PigLatin {
-    public static void main(String[] args) {
-        System.out.println(toPigLatin("The black cat"));
-    }
     public static String toPigLatin(String str) {
         String ret = "";
         str = str.toLowerCase();
@@ -29,8 +26,10 @@ public class PigLatin {
 
     public static String translateWordToPigLatin(String str) {
         String retString = "";
-        boolean lowerVowels = str.charAt(0) == 'a' || str.charAt(0) == 'e' || str.charAt(0) == 'i' || str.charAt(0) == 'o' || str.charAt(0) == 'u';
-        boolean capitalVowels = str.charAt(0) == 'A' || str.charAt(0) == 'E' || str.charAt(0) == 'I' || str.charAt(0) == 'O' || str.charAt(0) == 'U';
+        boolean lowerVowels = str.charAt(0) == 'a' || str.charAt(0) == 'e' || str.charAt(0) == 'i'
+                || str.charAt(0) == 'o' || str.charAt(0) == 'u';
+        boolean capitalVowels = str.charAt(0) == 'A' || str.charAt(0) == 'E' || str.charAt(0) == 'I'
+                || str.charAt(0) == 'O' || str.charAt(0) == 'U';
         if(lowerVowels || capitalVowels) {
             retString = str + "yay";
         }
@@ -43,8 +42,9 @@ public class PigLatin {
     public static String consonantFirst(String str) {
         int i = 0;
         int consonantCount = 0;
-        while(str.charAt(i) != 'A' && str.charAt(i) != 'E' && str.charAt(i) != 'I' && str.charAt(i) != 'O' && str.charAt(i) != 'U'
-                && str.charAt(i) != 'a' && str.charAt(i) != 'e' && str.charAt(i) != 'i' && str.charAt(i) != 'o' && str.charAt(i) != 'u') {
+        while(str.charAt(i) != 'A' && str.charAt(i) != 'E' && str.charAt(i) != 'I' && str.charAt(i) != 'O'
+                && str.charAt(i) != 'U' && str.charAt(i) != 'a' && str.charAt(i) != 'e' && str.charAt(i) != 'i'
+                && str.charAt(i) != 'o' && str.charAt(i) != 'u') {
             consonantCount++;
             i++;
         }
