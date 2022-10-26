@@ -43,9 +43,9 @@ public class PigLatin {
         int i = 0;
         int consonantCount = 0;
         while(str.charAt(i) != 'A' && str.charAt(i) != 'E' && str.charAt(i) != 'I' && str.charAt(i) != 'O'
-                && str.charAt(i) != 'U' && str.charAt(i) != 'a' && str.charAt(i) != 'e' && str.charAt(i) != 'i'
-                && str.charAt(i) != 'o' && str.charAt(i) != 'u') {
-            consonantCount++;
+                    && str.charAt(i) != 'U' && str.charAt(i) != 'a' && str.charAt(i) != 'e' && str.charAt(i) != 'i'
+                    && str.charAt(i) != 'o' && str.charAt(i) != 'u') {
+                consonantCount++;
             i++;
         }
         String cluster = str.substring(0,consonantCount);
