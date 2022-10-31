@@ -22,6 +22,9 @@ public class Power {
     }
 
     public void setStrengthPower(int strengthPower) {
+        if(strengthPower <= 0) {
+            this.strengthPower = 0;
+        }
         this.strengthPower = strengthPower;
     }
     public String toString() {

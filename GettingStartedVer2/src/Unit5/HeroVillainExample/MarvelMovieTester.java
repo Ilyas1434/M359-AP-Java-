@@ -7,6 +7,8 @@ public class MarvelMovieTester {
 
         Villain venom = new Villain("Venom", "Symbiote - black sludge", 150);
         System.out.println(venom.toString());
+
+        epicBattle(spiderman, venom, 10);
     }
     //Set up method header FIRST, then press /**, the Java Doc comments are setup
     /**
@@ -61,6 +63,24 @@ public class MarvelMovieTester {
             }
         }
         // else the hero has less strength
+    }
+
+    /**
+     * This method simulates repetitive battles between good and evil
+     * @param hero the good guy
+     * @param villain the bad guy
+     * @param numRounds number of battles
+     */
+    public static void epicBattle(SuperHero hero, Villain villain, int numRounds) {
+        while(hero.getSuperPower().getStrengthPower() > 0 &&
+                villain.getVillainPower().getStrengthPower() > 0 && numRounds > 0) {
+            // while both are still alive...
+            System.out.println("** there are " + numRounds + " to go");
+            battle(hero, villain);
+            System.out.println(hero);
+            System.out.println(villain);
+            numRounds--;
+        }
     }
     
 
