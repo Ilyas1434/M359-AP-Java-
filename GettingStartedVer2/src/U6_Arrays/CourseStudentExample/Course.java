@@ -52,6 +52,26 @@ public class Course {
         currentGrade = "";
     }
     public String toString() {
-        return "Per: " + period + "\t" + subject + "\t" + teacherName;
+        String ret = "";
+        if(this.teacherName.equals("")) {
+            teacherName = "-";
+        }
+        if(this.currentGrade.equals("")) {
+            currentGrade = "-";
+        }
+        ret += "Per: " + period + "\t" + subject;
+
+        int len = subject.length();
+
+        ret += currentGrade;
+        for (int i = currentGrade.length(); i < 25; i++) {
+            ret += " ";
+        }
+
+        if(teacherName != null) {
+            ret += teacherName;
+        }
+        return ret;
+
     }
 }

@@ -17,10 +17,10 @@ public class Student {
     public String toString() {
         String ret = "";
         ret += "Student Name: " + name;
+        ret += "\n";
         for(int i = 0; i < myClasses.length; i++) {
             Course current = myClasses[i];
             ret += current.toString() + "\n";
-
         }
         return ret;
     }
