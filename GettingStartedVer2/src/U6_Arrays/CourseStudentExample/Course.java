@@ -60,14 +60,15 @@ public class Course {
             currentGrade = "-";
         }
         ret += "Per: " + period + "\t" + subject;
-
         int len = subject.length();
-
-        ret += currentGrade;
-        for (int i = currentGrade.length(); i < 25; i++) {
+        for (int i = len; i < 25; i++) {
             ret += " ";
         }
-
+        ret += currentGrade;
+        int gradeLen = currentGrade.length();
+        for (int i = gradeLen; i < 25; i++) {
+            ret += " ";
+        }
         if(teacherName != null) {
             ret += teacherName;
         }
