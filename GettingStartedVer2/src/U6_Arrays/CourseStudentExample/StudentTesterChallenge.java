@@ -4,14 +4,14 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 public class StudentTesterChallenge {
     public static void main(String[] args) throws FileNotFoundException {
-        File schedule = new File("studentScheduleData.txt");
+        File schedule = new File("C:\\Users\\ACH Lighting\\Desktop\\Sameer's stuff\\M359-AP-Java-\\GettingStartedVer2\\src\\U6_Arrays\\CourseStudentExample\\studentScheduleData.txt");
         Scanner inSch = new Scanner(schedule);
         int maxStudents = inSch.nextInt();
         inSch.nextLine();
         Student[] allStudents = new Student[maxStudents];
         boolean isMore = true;
+        int count = 0;
         while(isMore) {
-            int count = 0;
             Course[] myClasses = new Course[8];
             String name = inSch.nextLine();
             for(int i = 0; i < myClasses.length; i++) {
@@ -30,6 +30,7 @@ public class StudentTesterChallenge {
             if(!inSch.hasNextLine()) {
                 isMore = false;
             }
+            count++;
         }
         for(Student c : allStudents) {
             if(c != null) {

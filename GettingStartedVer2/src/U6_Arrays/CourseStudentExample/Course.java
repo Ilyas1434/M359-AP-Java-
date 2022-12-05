@@ -61,7 +61,7 @@ public class Course {
         }
         ret += "Per: " + period + "\t" + subject;
         int len = subject.length();
-        for (int i = len; i < 25; i++) {
+        for (int i = len; i < 35; i++) {
             ret += " ";
         }
         ret += currentGrade;
