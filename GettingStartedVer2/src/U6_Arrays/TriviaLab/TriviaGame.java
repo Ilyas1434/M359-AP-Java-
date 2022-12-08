@@ -49,6 +49,14 @@ public class TriviaGame {
         return incorrectAnswers;
     }
 
+    public String getPlayerName() {
+        return playerName;
+    }
+
+    public void setPlayerName(String playerName) {
+        this.playerName = playerName;
+    }
+
     public void setIncorrectAnswers(int incorrectAnswers) {
         this.incorrectAnswers = incorrectAnswers;
     }
@@ -60,8 +68,17 @@ public class TriviaGame {
         correctStreak = 0;
         incorrectAnswers = 0;
     }
+
+    public Question getCurrentQuestion() {
+        return currentQuestion;
+    }
+
+    public void setCurrentQuestion(Question currentQuestion) {
+        this.currentQuestion = currentQuestion;
+    }
+
     public void createArray() throws FileNotFoundException {
-        File text = new File("C:\\Users\\ACH Lighting\\Desktop\\Sameer's stuff\\M359-AP-Java-\\GettingStartedVer2\\Questions.txt");
+        File text = new File("C:\\Users\\ilyas1434\\Documents\\GitHub\\M359-AP-Java-\\GettingStartedVer2\\Questions.txt");
         Scanner inF = new Scanner(text);
         for (int i = 0; i < 12; i++) {
             String question = inF.nextLine();
@@ -76,14 +93,7 @@ public class TriviaGame {
             questionArray[i] = q;
         }
     }
-    public void startGame() {
-        System.out.println("Welcome/Bienvenidos/Bienvenue to ULTIMATE WORLD LANGUAGE TRIVIA!");
-        System.out.println("For each question answered correctly, you will recieve points ranging from 100-500");
-        System.out.println("To begin, what is your name?");
-        Scanner input = new Scanner(System.in);
-        playerName = input.nextLine();
-        System.out.println("Welcome, " + playerName + "." + "Let's get started.");
-    }
+
     public void displayQuestion() {
         int randNum = (int) (Math.random() * 11) + 1;
         if(!(questionArray[randNum] == null)) {
@@ -99,7 +109,7 @@ public class TriviaGame {
             System.out.println("You got it!");
         }
         else{
-            System.out.println("dam you suck lol");
+            System.out.println("Unfortunately, that's not it");
         }
     }
 
