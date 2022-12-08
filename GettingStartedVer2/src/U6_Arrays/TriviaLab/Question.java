@@ -9,10 +9,9 @@ public class Question {
     private String choiceD;
     private String answer;
     private String explanation;
-    private int pointAmount;
+    private String pointAmount;
 
-    public Question(int questionNum, String question, String choiceA, String choiceB, String choiceC, String choiceD, String answer, String explanation, int pointAmount) {
-        this.questionNum = questionNum;
+    public Question(String question, String choiceA, String choiceB, String choiceC, String choiceD, String answer, String explanation, String pointAmount) {
         this.question = question;
         this.choiceA = choiceA;
         this.choiceB = choiceB;
@@ -87,11 +86,11 @@ public class Question {
         this.explanation = explanation;
     }
 
-    public int getPointAmount() {
+    public String getPointAmount() {
         return pointAmount;
     }
 
-    public void setPointAmount(int pointAmount) {
+    public void setPointAmount(String pointAmount) {
         this.pointAmount = pointAmount;
     }
 
