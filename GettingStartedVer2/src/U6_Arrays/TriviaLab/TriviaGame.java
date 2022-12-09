@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class TriviaGame {
+    public static Question previousQuestion;
     private Question[] questionArray = new Question[12];
     private Question currentQuestion;
     private int totalPoints;
@@ -94,24 +95,7 @@ public class TriviaGame {
         }
     }
 
-    public void displayQuestion() {
-        int randNum = (int) (Math.random() * 11) + 1;
-        if(!(questionArray[randNum] == null)) {
-            System.out.println(questionArray[randNum]);
-        }
-        currentQuestion = questionArray[randNum];
-        System.out.println("Enter the letter of the answer");
-    }
-    public void checkAnswer() {
-        Scanner input = new Scanner(System.in);
-        String response = input.nextLine();
-        if(response.equals(currentQuestion.getAnswer())) {
-            System.out.println("You got it!");
-        }
-        else{
-            System.out.println("Unfortunately, that's not it");
-        }
-    }
+
 
 
 
