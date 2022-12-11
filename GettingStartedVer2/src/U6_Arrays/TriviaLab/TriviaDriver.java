@@ -4,23 +4,32 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class TriviaDriver {
+    private static boolean keepPlaying = true;
+    private boolean previousWas = true;
     public static void main(String[] args) throws FileNotFoundException {
-        boolean keepPlaying = true;
+        TriviaGame game = new TriviaGame();
+        Scanner input = new Scanner(System.in);
+        beginGame();
+        String name = input.nextLine();
+        game.setPlayerName(name);
+        System.out.println("Let's begin, " + game.getPlayerName());
         while(keepPlaying = true) {
-            Scanner input = new Scanner(System.in);
-            TriviaGame game = new TriviaGame();
-            beginGame();
-            String name = input.nextLine();
-            game.setPlayerName(name);
-            System.out.println("Let's begin, " + game.getPlayerName());
+            if(game.isAllEqual()) {
+                printFinalStats(game);
+                System.exit(1);
+            }
             displayQuestion(game);
             String response = input.nextLine();
             checkAnswer(game, response);
             printStats(game);
             System.out.println("Wanna continue? (y or n)");
             String res = input.nextLine();
-            if (!res.equals("y")) {
-                keepPlaying = false;
+            if (res.equalsIgnoreCase("y")) {
+                keepPlaying = true;
+            }
+            else {
+                printFinalStats(game);
+                System.exit(1);
             }
         }
 
@@ -33,23 +42,37 @@ public class TriviaDriver {
     }
     public static void displayQuestion(TriviaGame a) {
         Question[] qArray = a.getQuestionArray();
-        int randNum = (int) (Math.random() * 11) + 1;
-        if(!(qArray[randNum] == null)) {
-            System.out.println(qArray[randNum]);
+        boolean repeat = true;
+        int repeatCount = 0;
+        while(repeat) {
+            a.setRandNum((int)(Math.random() * 12));
+            if (!(qArray[a.getRandNum()] == null)) {
+                System.out.println(qArray[a.getRandNum()]);
+                repeat = false;
+            }
         }
-        a.setCurrentQuestion(qArray[randNum]);
+        a.setCurrentQuestion(qArray[a.getRandNum()]);
         System.out.println("Enter the letter of the answer");
     }
     public static void checkAnswer(TriviaGame a, String response) {
-        if(response.equals(a.getCurrentQuestion().getAnswer())) {
+        if(response.equalsIgnoreCase(a.getCurrentQuestion().getAnswer())) {
             System.out.println("You got it! " + a.getCurrentQuestion().getExplanation());
             a.setCorrectAnswers(a.getCorrectAnswers() + 1);
+            String temp = a.getCurrentQuestion().getPointAmount();
+            int points = Integer.parseInt(temp);
+            a.setTotalPoints(a.getTotalPoints() + points);
+            a.setCorrectStreak(a.getCorrectStreak() + 1);
         }
         else{
             System.out.println("Unfortunately, that's not it. " + a.getCurrentQuestion().getExplanation());
             a.setIncorrectAnswers(a.getIncorrectAnswers() + 1);
+            a.setCorrectStreak(0);
         }
-        a.setCurrentQuestion(null);
+        Question[] array = a.getQuestionArray();
+        int rNum = a.getRandNum();
+        array[rNum] = null;
+        a.setQuestionArray(array);
+
     }
     public static void printStats(TriviaGame a) {
         System.out.println("Total points: " + a.getTotalPoints());
@@ -57,4 +80,14 @@ public class TriviaDriver {
         System.out.println("Amount wrong: " + a.getIncorrectAnswers());
         System.out.println("Current Streak: " + a.getCorrectStreak());
     }
+    public static void printFinalStats(TriviaGame a) {
+        System.out.println("Total points: " + a.getTotalPoints());
+        System.out.println("Amount correct: " + a.getCorrectAnswers());
+        System.out.println("Amount incorrect: " + a.getIncorrectAnswers());
+        double percent = 1.0 * a.getCorrectAnswers() / (a.getCorrectAnswers() + a.getIncorrectAnswers());
+        System.out.println("Percentage answered correctly: " + percent*100 + "%");
+    }
+
+
+
 }

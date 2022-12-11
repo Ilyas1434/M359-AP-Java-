@@ -5,7 +5,24 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class TriviaGame {
-    public static Question previousQuestion;
+    public static int getRandNum() {
+        return randNum;
+    }
+
+    public static void setRandNum(int randNum) {
+        TriviaGame.randNum = randNum;
+    }
+
+    public static Question getPreviousQuestion() {
+        return previousQuestion;
+    }
+
+    public static void setPreviousQuestion(Question previousQuestion) {
+        TriviaGame.previousQuestion = previousQuestion;
+    }
+
+    private static int randNum;
+    private static Question previousQuestion;
     private Question[] questionArray = new Question[12];
     private Question currentQuestion;
     private int totalPoints;
@@ -79,7 +96,7 @@ public class TriviaGame {
     }
 
     public void createArray() throws FileNotFoundException {
-        File text = new File("C:\\Users\\ilyas1434\\Documents\\GitHub\\M359-AP-Java-\\GettingStartedVer2\\Questions.txt");
+        File text = new File("C:\\Users\\ACH Lighting\\Desktop\\Sameer's stuff\\M359-AP-Java-\\GettingStartedVer2\\Questions.txt");
         Scanner inF = new Scanner(text);
         for (int i = 0; i < 12; i++) {
             String question = inF.nextLine();
@@ -94,7 +111,15 @@ public class TriviaGame {
             questionArray[i] = q;
         }
     }
-
+    public boolean isAllEqual() {
+        int count = 0;
+        for (int i = 1; i < questionArray.length; i++) {
+            if (questionArray[0] != null) {
+                return false;
+            }
+        }
+      return true;
+    }
 
 
 
