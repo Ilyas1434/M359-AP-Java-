@@ -12,7 +12,7 @@ public class TicketMaster {
     }
     public String toString() {
         String ret = "";
-        ret += "Date\tPrice\tQty\tPerformer\t\tCity";
+        ret += "Date\t\tPrice\tQty\t" + " " + "Performer" + "                          " +"City";
         ret += "\n";
         ret += "----------------------------------------------------------------------";
         ret += "\n";
@@ -25,7 +25,8 @@ public class TicketMaster {
     public void readInData() throws FileNotFoundException {
         Scanner inFile = null;
         try {
-            inFile = new Scanner(new File("C:\\Users\\Ilyas\\GitHub\\M359-AP-Java-\\GettingStartedVer2\\showData.txt"));
+            inFile = new Scanner(new File("showData.txt"));
+           // inFile = new Scanner(new File("C:\Users\ilyas1434\Documents\GitHub\M359-AP-Java-\GettingStartedVer2\showData.txt"));
         }
         catch(FileNotFoundException e) {
             System.out.println("Error Reading file");
