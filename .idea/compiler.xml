@@ -3,6 +3,7 @@
   <component name="CompilerConfiguration">
     <excludeFromCompile>
       <directory url="file://$PROJECT_DIR$/GettingStartedVer2/src/Unit3/ExampleInClass" includeSubdirectories="true" />
+      <file url="file://$PROJECT_DIR$/GettingStartedVer2/src/Unit7/Notes_7_4_Examples.java" />
     </excludeFromCompile>
   </component>
 </project>
