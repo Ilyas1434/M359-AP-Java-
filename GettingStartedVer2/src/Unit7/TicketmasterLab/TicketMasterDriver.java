@@ -4,13 +4,19 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class TicketMasterDriver {
-
+    public static final int ONE = 1;
+    public final int TWO = 2;
+    public final int THREE = 3;
+    public final int FOUR = 4;
+    public final int FIVE = 5;
+    public final int SIX = 6;
 
     public static void main(String[] args) throws FileNotFoundException {
         Scanner input = new Scanner(System.in);
         displayBeginning();
         displayMenu();
-        int inputtedInfo = getInput(input);
+
+
     }
     public static void displayBeginning() {
         System.out.println("\nWelcome to the TicketMaster Kiosk");
@@ -24,7 +30,7 @@ public class TicketMasterDriver {
                 + "5. Sort by Price (high - low)" + "6. Quit";
         System.out.println(menu);
     }
-    public static int getInput(Scanner in) {
+    public static void getInput(Scanner in) {
         int ret = 0;
         boolean keepGoing = true;
         while(keepGoing){
@@ -33,7 +39,6 @@ public class TicketMasterDriver {
                 int num = in.nextInt();
                 if(num >= 1 && num <= 5) {
                     System.out.println("You entered " + num);
-                    ret = num;
                 }
                 else if(num == 6) {
                     System.out.println("Thank you for using our Kiosk");
@@ -51,6 +56,6 @@ public class TicketMasterDriver {
             }
 
         }
-        return ret;
     }
+    public static String doer()
 }
