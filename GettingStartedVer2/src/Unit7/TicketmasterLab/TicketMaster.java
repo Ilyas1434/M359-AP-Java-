@@ -25,8 +25,8 @@ public class TicketMaster {
     public void readInData() throws FileNotFoundException {
         Scanner inFile = null;
         try {
-            inFile = new Scanner(new File("showData.txt"));
-           // inFile = new Scanner(new File("C:\Users\ilyas1434\Documents\GitHub\M359-AP-Java-\GettingStartedVer2\showData.txt"));
+             inFile = new Scanner(new File("showData.txt"));
+           //inFile = new Scanner(new File("C:\\Users\\ilyas1434\\Documents\\GitHub\\M359-AP-Java-\\GettingStartedVer2\\showData.txt"));
         }
         catch(FileNotFoundException e) {
             System.out.println("Error Reading file");
@@ -42,5 +42,13 @@ public class TicketMaster {
             Show concert = new Show(date, price, quantity, artist, city);
             showList.add(concert);
         }
+    }
+
+    public ArrayList<Show> getShowList() {
+        return showList;
+    }
+
+    public void setShowList(ArrayList<Show> showList) {
+        this.showList = showList;
     }
 }
