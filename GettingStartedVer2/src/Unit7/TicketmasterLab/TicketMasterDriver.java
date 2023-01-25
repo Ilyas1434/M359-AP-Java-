@@ -18,7 +18,6 @@ public class TicketMasterDriver {
         obj.readInData();
         Scanner input = new Scanner(System.in);
         displayBeginning();
-        displayMenu();
         getInput(input);
 
 
@@ -30,7 +29,7 @@ public class TicketMasterDriver {
         System.out.println("\n");
     }
     public static void displayMenu() {
-        String menu = "1. Search by city\n2. Sort by performer (A-Z)\n" +
+        String menu = "\n1. Search by city\n2. Sort by performer (A-Z)\n" +
                 "3. Sort by performer (Z-A)\n4. Sort by Price (low - high)\n"
                 + "5. Sort by Price (high - low)" + "\n6. Quit\n";
         System.out.println(menu);
@@ -40,6 +39,7 @@ public class TicketMasterDriver {
         boolean keepGoing = true;
         while(keepGoing){
             try {
+                displayMenu();
                 System.out.println("Enter an integer between 1 & 6");
                 int num = in.nextInt();
                 if(num >= 1 && num <= 5) {
@@ -70,7 +70,8 @@ public class TicketMasterDriver {
             try {
                 int count = 0;
                 System.out.println("Enter the name of your city");
-                String cityName = s.next();
+                s.nextLine();
+                String cityName = s.nextLine();
                 for(int i = 0; i < obj.getShowList().size(); i++) {
                     String hello = obj.getShowList().get(i).getCity().trim();
                     if(hello.equalsIgnoreCase(cityName)) {
