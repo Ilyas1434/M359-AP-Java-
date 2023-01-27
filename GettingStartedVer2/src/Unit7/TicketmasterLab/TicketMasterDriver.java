@@ -5,12 +5,12 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class TicketMasterDriver {
-    public static final int ONE = 1;
-    public static final int TWO = 2;
-    public static final int THREE = 3;
-    public static final int FOUR = 4;
-    public static final int FIVE = 5;
-    public static final int SIX = 6;
+    public static final int CITYSEARCH= 1;
+    public static final int PERFORMERATOZ = 2;
+    public static final int PERFORMERZTOA = 3;
+    public static final int PRICELOWHIGH = 4;
+    public static final int PRICEHIGHLOW = 5;
+    public static final int QUIT = 6;
     private static TicketMaster obj;
 
     public static void main(String[] args) throws FileNotFoundException {
@@ -42,12 +42,15 @@ public class TicketMasterDriver {
                 displayMenu();
                 System.out.println("Enter an integer between 1 & 6");
                 int num = in.nextInt();
-                if(num >= 1 && num <= 5) {
-                    if(num == 1) {
-                        citySearcher(in);
+                if(num >= CITYSEARCH && num <= PRICELOWHIGH) {
+                    if(num == CITYSEARCH) {
+                        obj.citySearcher(in);
+                    }
+                    if(num == PERFORMERATOZ) {
+                        obj.performerSortAZ(in);
                     }
                 }
-                else if(num == 6) {
+                else if(num == QUIT) {
                     System.out.println("Thank you for using our Kiosk");
                     System.out.println("Have a nice day!");
                     in.close();
@@ -64,35 +67,7 @@ public class TicketMasterDriver {
 
         }
     }
-    public static void citySearcher(Scanner s) {
-        boolean keepGoing = true;
-        while(keepGoing) {
-            try {
-                int count = 0;
-                System.out.println("Enter the name of your city");
-                s.nextLine();
-                String cityName = s.nextLine();
-                for(int i = 0; i < obj.getShowList().size(); i++) {
-                    String hello = obj.getShowList().get(i).getCity().trim();
-                    if(hello.equalsIgnoreCase(cityName)) {
-                        if(count == 0) {
-                            beginningDisplay();
-                        }
-                        System.out.println(obj.getShowList().get(i));
-                        count++;
-                    }
-                }
-                if(count == 0) {
-                    System.out.println("Sorry, there are no shows in your city of choice");
-                }
-                keepGoing = false;
-            }
-            catch (InputMismatchException e) {
-                System.out.println("Please try again, that was not a String");
-                s.nextLine(); // dummy read to clear out bad data
-            }
-        }
-    }
+
     public static void beginningDisplay() {
         String ret = "";
         ret += "Date\t\tPrice\tQty\t" + " " + "Performer" + "                          " +"City";
