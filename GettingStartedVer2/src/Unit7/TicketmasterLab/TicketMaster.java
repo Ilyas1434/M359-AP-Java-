@@ -78,15 +78,37 @@ public class TicketMaster {
         newShows = showList;
         for(int i = 0; i < newShows.size() - 1; i++) {
             int minIndex = i;
-            for(int j = i + 1; i < newShows.size() -1; i++) {
-                if(newShows.get(j).getPerformer().compareTo(newShows.get(minIndex).getPerformer()) < 0) {
+            for(int j = i + 1; j < newShows.size() -1; j++) {
+                String current = newShows.get(j).getPerformer();
+                String minimum = newShows.get(minIndex).getPerformer();
+                if(current.compareTo(minimum) < 0) {
                     minIndex = j;
                 }
-                System.out.println(minIndex);
-                Show temp = newShows.get(minIndex);
-                newShows.set(minIndex, newShows.get(i));
-                newShows.set(i, temp);
             }
+            Show temp = newShows.get(minIndex);
+            newShows.set(minIndex, newShows.get(i));
+            newShows.set(i, temp);
+        }
+        for(int i = 0; i < newShows.size(); i++) {
+            System.out.println(newShows.get(i));
+            System.out.println();
+        }
+    }
+    public void performerSortZA(Scanner s) {
+        ArrayList<Show> newShows = new ArrayList<>();
+        newShows = showList;
+        for(int i = 0; i < newShows.size() - 1; i++) {
+            int minIndex = i;
+            for(int j = i + 1; j < newShows.size() -1; j++) {
+                String current = newShows.get(j).getPerformer();
+                String minimum = newShows.get(minIndex).getPerformer();
+                if(current.compareTo(minimum) > 0) {
+                    minIndex = j;
+                }
+            }
+            Show temp = newShows.get(minIndex);
+            newShows.set(minIndex, newShows.get(i));
+            newShows.set(i, temp);
         }
         for(int i = 0; i < newShows.size(); i++) {
             System.out.println(newShows.get(i));

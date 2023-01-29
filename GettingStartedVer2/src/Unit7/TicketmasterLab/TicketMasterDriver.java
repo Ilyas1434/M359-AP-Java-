@@ -49,6 +49,9 @@ public class TicketMasterDriver {
                     if(num == PERFORMERATOZ) {
                         obj.performerSortAZ(in);
                     }
+                    if(num == PERFORMERZTOA) {
+                        obj.performerSortZA(in);
+                    }
                 }
                 else if(num == QUIT) {
                     System.out.println("Thank you for using our Kiosk");
