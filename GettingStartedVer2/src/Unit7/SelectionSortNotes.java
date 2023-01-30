@@ -30,5 +30,7 @@ public class SelectionSortNotes {
             myNums.set(i, temp);
         }
         System.out.println(myNums);
+
     }
+
 }
