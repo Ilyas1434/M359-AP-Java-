@@ -78,7 +78,7 @@ public class TicketMaster {
         newShows = showList;
         for(int i = 0; i < newShows.size() - 1; i++) {
             int minIndex = i;
-            for(int j = i + 1; j < newShows.size() -1; j++) {
+            for(int j = i + 1; j < newShows.size(); j++) {
                 String current = newShows.get(j).getPerformer();
                 String minimum = newShows.get(minIndex).getPerformer();
                 if(current.compareTo(minimum) < 0) {
@@ -89,6 +89,7 @@ public class TicketMaster {
             newShows.set(minIndex, newShows.get(i));
             newShows.set(i, temp);
         }
+        beginningDisplay();
         for(int i = 0; i < newShows.size(); i++) {
             System.out.println(newShows.get(i));
             System.out.println();
@@ -99,7 +100,7 @@ public class TicketMaster {
         newShows = showList;
         for(int i = 0; i < newShows.size() - 1; i++) {
             int minIndex = i;
-            for(int j = i + 1; j < newShows.size() -1; j++) {
+            for(int j = i + 1; j < newShows.size(); j++) {
                 String current = newShows.get(j).getPerformer();
                 String minimum = newShows.get(minIndex).getPerformer();
                 if(current.compareTo(minimum) > 0) {
@@ -110,6 +111,46 @@ public class TicketMaster {
             newShows.set(minIndex, newShows.get(i));
             newShows.set(i, temp);
         }
+        beginningDisplay();
+        for(int i = 0; i < newShows.size(); i++) {
+            System.out.println(newShows.get(i));
+            System.out.println();
+        }
+    }
+    public void priceSortLowHigh(Scanner s) {
+        ArrayList<Show> newShows = getShowList();
+
+        for(int i = 1; i < newShows.size(); i++) {
+            Show valueToInsert = newShows.get(i);
+            int position = i;
+            while(position > 0 && newShows.get(position -1 ).getPrice() > valueToInsert.getPrice()) {
+                // shift the value to the right
+                newShows.set(position, newShows.get(position - 1));
+                position--; // move to the next value to check
+            }
+            newShows.set(position, valueToInsert);
+        }
+        beginningDisplay();
+        for(int i = 0; i < newShows.size(); i++) {
+            System.out.println(newShows.get(i));
+            System.out.println();
+        }
+    }
+
+    public void priceSortHighLow(Scanner s) {
+        ArrayList<Show> newShows = getShowList();
+
+        for(int i = 1; i < newShows.size(); i++) {
+            Show valueToInsert = newShows.get(i);
+            int position = i;
+            while(position > 0 && newShows.get(position -1 ).getPrice() < valueToInsert.getPrice()) {
+                // shift the value to the right
+                newShows.set(position, newShows.get(position - 1));
+                position--; // move to the next value to check
+            }
+            newShows.set(position, valueToInsert);
+        }
+        beginningDisplay();
         for(int i = 0; i < newShows.size(); i++) {
             System.out.println(newShows.get(i));
             System.out.println();

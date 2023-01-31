@@ -2,7 +2,7 @@ package Unit7;
 
 import java.util.ArrayList;
 
-public class Selectionsort {
+public class InsertionSortNotes {
     public static void main(String[] args) {
         ArrayList<Integer> myNums= new ArrayList<Integer>();
         myNums.add(3);

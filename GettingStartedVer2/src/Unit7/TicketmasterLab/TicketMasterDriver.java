@@ -42,7 +42,7 @@ public class TicketMasterDriver {
                 displayMenu();
                 System.out.println("Enter an integer between 1 & 6");
                 int num = in.nextInt();
-                if(num >= CITYSEARCH && num <= PRICELOWHIGH) {
+                if(num >= CITYSEARCH && num <= PRICEHIGHLOW) {
                     if(num == CITYSEARCH) {
                         obj.citySearcher(in);
                     }
@@ -51,6 +51,12 @@ public class TicketMasterDriver {
                     }
                     if(num == PERFORMERZTOA) {
                         obj.performerSortZA(in);
+                    }
+                    if(num == PRICELOWHIGH) {
+                        obj.priceSortLowHigh(in);
+                    }
+                    if(num == PRICEHIGHLOW) {
+                        obj.priceSortHighLow(in);
                     }
                 }
                 else if(num == QUIT) {
