@@ -66,7 +66,7 @@ public class TicketMasterDriver {
                     keepGoing = false;
                 }
                 else {
-                    System.out.println("Invalid entry, out of range");
+                    System.out.println("Invalid entry, out of range (Must be between 1 & 6 inclusive)");
                 }
             }
             catch (Exception e) {

@@ -1,11 +1,11 @@
 package Unit7.TicketmasterLab;
 
 public class Show {
-    String date;
-    double price;
-    int qty;
-    String performer;
-    String city;
+    private String date;
+    private double price;
+    private int qty;
+    private String performer;
+    private String city;
 
     public Show(String date, double price, int qty, String performer, String city) {
         this.date = date;

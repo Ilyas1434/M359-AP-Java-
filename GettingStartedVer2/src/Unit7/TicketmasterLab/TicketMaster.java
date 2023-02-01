@@ -43,6 +43,7 @@ public class TicketMaster {
             Show concert = new Show(date, price, quantity, artist, city);
             showList.add(concert);
         }
+        inFile.close();
     }
     public void citySearcher(Scanner s) {
             boolean keepGoing = true;
