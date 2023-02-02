@@ -11,6 +11,11 @@ public class TicketMaster {
     public TicketMaster() {
         this.showList = new ArrayList<>();
     }
+
+    /**
+     * Aggregates all data in obj.getShowList() to format in a nice, clean, column manner
+     * @return String of arrayList data sorted in nice format, tabbed properly
+     */
     public String toString() {
         String ret = "";
         ret += "Date\t\tPrice\tQty\t" + " " + "Performer" + "                          " +"City";
@@ -23,7 +28,12 @@ public class TicketMaster {
         }
         return ret;
     }
-    public void readInData() throws FileNotFoundException {
+
+    /**
+     * Reads in all data in showData.text and stores each show's attributes in separate Show objects
+     * Then, it stores each Show obj in showList
+     */
+    public void readInData()  {
         Scanner inFile = null;
         try {
              inFile = new Scanner(new File("showData.txt"));
@@ -45,6 +55,12 @@ public class TicketMaster {
         }
         inFile.close();
     }
+
+    /**
+     * Asks for user input to search through ShowList with Shows in the desired city using linear search
+     * For each Show object found with the desired city, the Show is printed and if not, a message is displayed
+     * @param s represents the scanner object passed in through the TicketMasterDriver class to collect user input
+     */
     public void citySearcher(Scanner s) {
             boolean keepGoing = true;
             while(keepGoing) {
@@ -74,7 +90,11 @@ public class TicketMaster {
                 }
             }
     }
-    public void performerSortAZ(Scanner s) {
+
+    /**
+     * Sorts showList in alphabetical order using selection sort and prints each Show object
+     */
+    public void performerSortAZ() {
         ArrayList<Show> newShows = new ArrayList<>();
         newShows = showList;
         for(int i = 0; i < newShows.size() - 1; i++) {
@@ -96,7 +116,10 @@ public class TicketMaster {
             System.out.println();
         }
     }
-    public void performerSortZA(Scanner s) {
+    /**
+     * Sorts showList in reverse alphabetical order using selection sort and prints each Show object
+     */
+    public void performerSortZA() {
         ArrayList<Show> newShows = new ArrayList<>();
         newShows = showList;
         for(int i = 0; i < newShows.size() - 1; i++) {
@@ -118,7 +141,11 @@ public class TicketMaster {
             System.out.println();
         }
     }
-    public void priceSortLowHigh(Scanner s) {
+
+    /**
+     * Sorts showList by the price attribute of each Show from low-high, and then prints each Show from left-right
+     */
+    public void priceSortLowHigh() {
         ArrayList<Show> newShows = getShowList();
 
         for(int i = 1; i < newShows.size(); i++) {
@@ -137,8 +164,11 @@ public class TicketMaster {
             System.out.println();
         }
     }
+    /**
+     * Sorts showList by the price attribute of each Show from high-low, and then prints each Show from left-right
+     */
 
-    public void priceSortHighLow(Scanner s) {
+    public void priceSortHighLow() {
         ArrayList<Show> newShows = getShowList();
 
         for(int i = 1; i < newShows.size(); i++) {
@@ -165,6 +195,10 @@ public class TicketMaster {
     public void setShowList(ArrayList<Show> showList) {
         this.showList = showList;
     }
+
+    /**
+     * Displays the beginning of the tabbed toString, indicating where the date, price qty, performer, and city lie
+     */
     public static void beginningDisplay() {
         String ret = "";
         ret += "Date\t\tPrice\tQty\t" + " " + "Performer" + "                          " +"City";

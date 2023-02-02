@@ -22,18 +22,33 @@ public class TicketMasterDriver {
 
 
     }
+
+    /**
+     * Displays introductory message to user with instructions to how to use the kiosk
+     */
     public static void displayBeginning() {
         System.out.println("\nWelcome to the TicketMaster Kiosk");
         System.out.println("You may search our shows by city as well as sort the shows by performer and ticket price");
         System.out.println("\nSimply select the correct option corresponding with your choice");
         System.out.println("\n");
     }
+
+    /**
+     * Displays the menu of choices the user has and the numbers that correspond with them
+     */
     public static void displayMenu() {
         String menu = "\n1. Search by city\n2. Sort by performer (A-Z)\n" +
                 "3. Sort by performer (Z-A)\n4. Sort by Price (low - high)\n"
                 + "5. Sort by Price (high - low)" + "\n6. Quit\n";
         System.out.println(menu);
     }
+
+    /**
+     * Gets user input (1-6), and if invalid entry (such as different data type, out of bounds), error message
+     * is displayed via try-catch block and selection statements. Depending on the input, it calls methods that
+     * display the proper thing the user requested using selection statements
+     * @param in
+     */
     public static void getInput(Scanner in) {
         int ret = 0;
         boolean keepGoing = true;
@@ -47,16 +62,16 @@ public class TicketMasterDriver {
                         obj.citySearcher(in);
                     }
                     if(num == PERFORMERATOZ) {
-                        obj.performerSortAZ(in);
+                        obj.performerSortAZ();
                     }
                     if(num == PERFORMERZTOA) {
-                        obj.performerSortZA(in);
+                        obj.performerSortZA();
                     }
                     if(num == PRICELOWHIGH) {
-                        obj.priceSortLowHigh(in);
+                        obj.priceSortLowHigh();
                     }
                     if(num == PRICEHIGHLOW) {
-                        obj.priceSortHighLow(in);
+                        obj.priceSortHighLow();
                     }
                 }
                 else if(num == QUIT) {
@@ -77,6 +92,9 @@ public class TicketMasterDriver {
         }
     }
 
+    /**
+     * Displays the beginning of the tabbed toString, indicating where the date, price qty, performer, and city lie
+     */
     public static void beginningDisplay() {
         String ret = "";
         ret += "Date\t\tPrice\tQty\t" + " " + "Performer" + "                          " +"City";
