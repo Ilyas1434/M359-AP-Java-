@@ -62,8 +62,13 @@ public class Notes_7_4_Examples {
      * @return returns its int value
      */
     public static int findMin(ArrayList<Integer> list) {
-        int count = list.get(0);
-
+        int smallestValue = list.get(0);
+        for(int i = 0; i < list.size(); i++) {
+            if(list.get(i) < smallestValue) {
+                smallestValue = list.get(i);
+            }
+        }
+        return smallestValue;
     }
 
     /**
@@ -72,7 +77,13 @@ public class Notes_7_4_Examples {
      * @return returns its int value
      */
     public static int findMax(ArrayList<Integer> list) {
-
+        int greatestValue = list.get(0);
+        for(int i = 0; i > list.size(); i++) {
+            if(list.get(i) < greatestValue) {
+                greatestValue = list.get(i);
+            }
+        }
+        return greatestValue;
     }
 
     /**
@@ -81,7 +92,11 @@ public class Notes_7_4_Examples {
      * @return returns the int value for the sum
      */
     public static int findSum(ArrayList<Integer> list) {
-
+        int sum = 0;
+        for(int i = 0; i < list.size(); i++) {
+            sum += list.get(i);
+        }
+        return sum;
     }
 
     /**
@@ -90,7 +105,11 @@ public class Notes_7_4_Examples {
      * @return double average value
      */
     public static double findAverage(ArrayList<Integer> list) {
-
+        double sum = 0;
+        for(int i = 0; i < list.size(); i++) {
+            sum += list.get(i);
+        }
+        return sum / list.size();
     }
 
     /**
@@ -99,10 +118,12 @@ public class Notes_7_4_Examples {
      * @return true or false if increasing
      */
     public static boolean isIncreasing(ArrayList<Integer> list) {
-        for(int i = 0; i < list.size(); i++) {
-
+        for(int i = 0; i < list.size() -1; i++) {
+            if(!list.get(i) <= list.get(i+1)) {
+                return false;
+            }
         }
-        return list;
+        return false;
     }
 
     /**
@@ -114,12 +135,7 @@ public class Notes_7_4_Examples {
     public static boolean hasDuplicates(ArrayList<String> list) {
         // use a nested for loop to compare each value to all the values after it.
         // Common mistake is returning too early
-        for(int i = 0; i < list.size() - 1; i++) {
-            for(int j = i + 1; j <list.size(); j++) {
-                if(list.get(j).equals(list.get(i))) {
-                    return true;
-                }
-            }
+        
         }
         return false;
 
