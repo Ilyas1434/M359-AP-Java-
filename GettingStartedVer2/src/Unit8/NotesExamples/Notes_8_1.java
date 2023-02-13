@@ -22,12 +22,12 @@ public class Notes_8_1 {
         System.out.println(last);
         // 3.  Print the middle value of arr2D
         int middle = arr2D[2][2];
-        System.out.println(middle);
+        System.out.print(middle);
 
         // 4.  Change the first value in the last row of arr2D to be equal to 0
         //     and then print its new value
         arr2D[2][0] = 0;
-        System.out.println(arr2D);
+        System.out.print(arr2D);
 
         // BONUS challenge - see if you can figure out the way to use double for loops to
         // traverse a 2D array
@@ -35,8 +35,9 @@ public class Notes_8_1 {
         // Each row of the array should print on a new line
         for(int i = 0; i < arr2D.length; i++) {
             for(int j = 0; j < arr2D[i].length; j++) {
-                System.out.println(arr2D[i][j]);
+                System.out.print(arr2D[i][j]);
             }
+            System.out.println();
         }
 
         // Create a 5 x 10 2D array called multiples
@@ -58,7 +59,7 @@ public class Notes_8_1 {
         // Print all values in multiples using a for loop
         for(int i = 0; i < multiple.length; i++) {
             for(int j = 0; j < multiple[i].length; j++) {
-                System.out.println(multiple[i][j]);
+                System.out.print(multiple[i][j]);
             }
         }
 
