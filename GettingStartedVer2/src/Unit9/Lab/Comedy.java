@@ -4,5 +4,5 @@ public class Comedy extends Movie {
     private String comedicType;
 
 
-    
+
 }
