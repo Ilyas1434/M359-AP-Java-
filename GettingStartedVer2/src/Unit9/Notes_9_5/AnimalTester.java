@@ -29,6 +29,10 @@ public class AnimalTester
    
        for (Animal a: barn)
             a.speak();
+
+       Animal c1 = new Cow("Daisy","Dairy");
+       Cow cowCast = (Cow) c1;
+       cowCast.spots();
             // 3. What method is getting called here?  The speak method of the Animal class?
             // No, the speak method of each individual class
        // 4. Try to summarize in 2-3 sentences WHAT you observed in this code.

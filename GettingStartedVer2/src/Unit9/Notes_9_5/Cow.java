@@ -19,4 +19,7 @@ public class Cow extends Animal
         System.out.println("The "+ cowType + " Cow " + getName() + " says MOOOOO.");
     }
 
+    public void spots() {
+        System.out.println("The cow has spots");
+    }
 }
