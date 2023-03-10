@@ -10,6 +10,7 @@
       <file url="file://$PROJECT_DIR$/src/Unit7/TicketmasterLab/Show.java" />
       <file url="file://$PROJECT_DIR$/src/Unit7/TicketmasterLab/TicketMaster.java" />
       <file url="file://$PROJECT_DIR$/src/Unit7/TicketmasterLab/TicketMasterDriver.java" />
+      <file url="file://$PROJECT_DIR$/src/Unit4/Lab/PigLatinJUnitTest.java" />
     </excludeFromCompile>
   </component>
 </project>
