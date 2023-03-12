@@ -37,4 +37,7 @@ public class Superhero extends Action {
         this.heroSuperPower = heroSuperPower;
     }
 
+    // call recommender method of Action superclass, then add additionally add isMarvel dependent statement like
+    // "do you like Iron Man, Spiderman, and the Hulk! Then, you'll enjoy this movie since it takes place in
+    // the same universe!" and something similar for DC
 }

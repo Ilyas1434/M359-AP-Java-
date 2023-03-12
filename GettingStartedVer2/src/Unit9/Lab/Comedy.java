@@ -9,28 +9,26 @@ public class Comedy extends Movie {
     private boolean isRomCom;
 
     public Comedy(String title, int hours, int minutes, double googleRating, String ageRating, boolean isAnimated,
-                  String mainComedian, boolean isSatire, int numFunnyJokes, int numBadJokes, double funnyRating, boolean isRomCom) {
+                  String mainComedian, boolean isSatire, int numFunnyJokes, int numBadJokes,  boolean isRomCom) {
         super(title, hours, minutes, googleRating, ageRating, isAnimated);
         this.mainComedian = mainComedian;
         this.isSatire = isSatire;
         this.numFunnyJokes = numFunnyJokes;
         this.numBadJokes = numBadJokes;
-        this.funnyRating = funnyRating;
         this.isRomCom = isRomCom;
     }
 
     public String toString() {
         super.toString();
-        String str = "\nIt is a comedy movie that features " + mainComedian + " as the main comedian.";
+        String str = "\nThis is a COMEDY movie that features " + mainComedian + " as the main comedian.";
         if(isSatire) {
             str += " This movie is satirical.";
         }
-        str += "It has " + numFunnyJokes + " funny jokes and " + numBadJokes + " bad jokes";
         if(isRomCom) {
-            str += "This film also features romance";
+            str += "\nThis film also features romance";
         }
         else {
-            str += "This film is non-romantic";
+            str += "\nThis film is non-romantic";
         }
         return str;
     }
@@ -75,5 +73,5 @@ public class Comedy extends Movie {
     public void setRomCom(boolean romCom) {
         isRomCom = romCom;
     }
-    // Method that calculates funny rating and suggests to watch this movie when you are sad and want to laugh
+    //  Recommender Method that calculates funny rating and suggests to watch this movie when you are sad and want to laugh
 }

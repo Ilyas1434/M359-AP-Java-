@@ -50,19 +50,19 @@ public class Action extends Movie {
     public String toString() {
         String str = "";
         str += super.toString();
-        str += "\nThe main character of this action movie is " + mainProtagonist + ", and the main antagonist of this action movie is ";
+        str += "\nThe main character of this ACTION movie is " + mainProtagonist + ", and the main antagonist of this action movie is ";
         str += mainAntagonist + ".\n";
-        str += "This action movie has " + numFights + " fights/action scenes, and ";
         if(stuntsDoneByActor) {
-            str += " most stunts were done by the starring actor";
+            str += " Most stunts were done by the starring actor";
         }
         else {
-            str += " most stunts were not performed by the starring actor";
+            str += " Most stunts were not performed by the starring actor";
         }
         return str;
     }
-    // Something that checks the amount of fights, and returns a value saying "wow, that's a lot of fights!" or
-    // this is a calmer action movie
+    // Recommender method that checks the amount of fights, and returns a value saying "If you're into really action-heavy
+    // scenes, you'll love this movie!" or
+    // "If you're into more plot and drama and less fighting, this is the film for you!"
 
 
 }
