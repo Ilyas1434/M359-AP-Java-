@@ -19,7 +19,7 @@ public class Movie {
 
     public String toString() {
         String str = "The name of this film is " + title + ", and is " + hours + ":" + minutes + " long\n";
-        str += "It is rated " + googleRating + "/10 on Google, and it's age rating is " + ageRating;
+        str += "It's age rating is " + ageRating;
         if(isAnimated) {
             str += "\nThis movie IS animated";
         }
@@ -75,5 +75,21 @@ public class Movie {
 
     public void setAnimated(boolean animated) {
         isAnimated = animated;
+    }
+
+    // Recommender method: below or above 7 for google rating
+
+    public String Recommender() {
+        String str;
+        if(googleRating >= 8.0) {
+            str="This movie is a blockbuster with a very high audience rating, so chances are you'll like this film!";
+        }
+        else if((googleRating>= 6.0) && (googleRating<8.0)) {
+            str="This movie has a mediocre audience rating, so you might not enjoy this film";
+        }
+        else {
+            str="This movie is has a very low audience rating and is likely to be a flop, so we do not recommend this film.";
+        }
+        return str;
     }
 }

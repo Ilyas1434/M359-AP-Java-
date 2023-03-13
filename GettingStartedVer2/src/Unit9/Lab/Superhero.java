@@ -40,4 +40,23 @@ public class Superhero extends Action {
     // call recommender method of Action superclass, then add additionally add isMarvel dependent statement like
     // "do you like Iron Man, Spiderman, and the Hulk! Then, you'll enjoy this movie since it takes place in
     // the same universe!" and something similar for DC
+
+    @Override
+    public String toString() {
+        super.toString();
+        String ret = "Additionally, this is a SUPERHERO movie,";
+        ret += " with the main superpower of the hero " + heroSuperPower;
+        return ret;
+    }
+
+    public String Recommender() {
+        String ret = "\nAdditionally, this movie takes place in the ";
+        if(isMarvel) {
+            ret += "Marvel universe, so if you're a big fan of Iron Man, Spiderman, and the Hulk, you'll love this film!";
+        }
+        else if(isDC) {
+            ret += "DC universe, so if you're a big fan of Batman, Wonder Woman, and Superman, you'll love this movie!";
+        }
+        return ret;
+    }
 }

@@ -20,7 +20,7 @@ public class Comedy extends Movie {
 
     public String toString() {
         super.toString();
-        String str = "\nThis is a COMEDY movie that features " + mainComedian + " as the main comedian.";
+        String str = "\nAdditionally, this is a COMEDY movie that features " + mainComedian + " as the main comedian.";
         if(isSatire) {
             str += " This movie is satirical.";
         }
@@ -73,5 +73,18 @@ public class Comedy extends Movie {
     public void setRomCom(boolean romCom) {
         isRomCom = romCom;
     }
-    //  Recommender Method that calculates funny rating and suggests to watch this movie when you are sad and want to laugh
+
+    //  Recommender Method that calculates funny rating and suggests to watch this movie if you want to laugh
+
+    public String Recommender() {
+        funnyRating = (double)(numFunnyJokes)/(numFunnyJokes+numBadJokes);
+        String str = "This movie has " + numFunnyJokes + " funny jokes and " + numBadJokes + " bad jokes coming to a funny rating of " + funnyRating;
+        if(funnyRating >= 6.5) {
+            str += "\nIf you are looking for a laugh, then this movie is for you";
+        }
+        else {
+            str += "\nThis movie is great if you are looking for corny dad jokes";
+        }
+        return str;
+    }
 }

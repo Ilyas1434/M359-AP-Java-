@@ -63,6 +63,15 @@ public class Action extends Movie {
     // Recommender method that checks the amount of fights, and returns a value saying "If you're into really action-heavy
     // scenes, you'll love this movie!" or
     // "If you're into more plot and drama and less fighting, this is the film for you!"
-
+    public String Recommender() {
+        String ret = "";
+        if(numFights > 6) {
+            ret += "If you're really into action-heavy scenes and flashy cinematics, you'll love this movie!";
+        }
+        else {
+            ret += "If you're into more plot and drama and less fighting, this is the film for you!";
+        }
+        return ret;
+    }
 
 }
