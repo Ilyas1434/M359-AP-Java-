@@ -79,7 +79,7 @@ public class Movie {
 
     // Recommender method: below or above 7 for google rating
 
-    public String Recommender() {
+    public String recommender() {
         String str;
         if(googleRating >= 8.0) {
             str="This movie is a blockbuster with a very high audience rating, so chances are you'll like this film!";

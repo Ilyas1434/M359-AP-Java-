@@ -76,7 +76,7 @@ public class Comedy extends Movie {
 
     //  Recommender Method that calculates funny rating and suggests to watch this movie if you want to laugh
 
-    public String Recommender() {
+    public String recommender() {
         funnyRating = (double)(numFunnyJokes)/(numFunnyJokes+numBadJokes);
         String str = "This movie has " + numFunnyJokes + " funny jokes and " + numBadJokes + " bad jokes coming to a funny rating of " + funnyRating;
         if(funnyRating >= 6.5) {

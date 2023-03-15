@@ -49,7 +49,7 @@ public class Superhero extends Action {
         return ret;
     }
 
-    public String Recommender() {
+    public String recommender() {
         String ret = "\nAdditionally, this movie takes place in the ";
         if(isMarvel) {
             ret += "Marvel universe, so if you're a big fan of Iron Man, Spiderman, and the Hulk, you'll love this film!";
