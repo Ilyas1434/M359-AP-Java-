@@ -1,5 +1,7 @@
 package Unit9.Lab;
 
+import static java.lang.Math.round;
+
 public class Comedy extends Movie {
     private String mainComedian;
     private boolean isSatire;
@@ -18,8 +20,12 @@ public class Comedy extends Movie {
         this.isRomCom = isRomCom;
     }
 
+    /**
+     * Creates string of Comedy class object attributes formatted as an addition to the Movie class toString() method
+     * @return string using attributes of mainComedian, isSatire, and isRomCom, along with Movie Class toString()
+     */
     public String toString() {
-        super.toString();
+        System.out.println(super.toString());
         String str = "\nAdditionally, this is a COMEDY movie that features " + mainComedian + " as the main comedian.";
         if(isSatire) {
             str += " This movie is satirical.";
@@ -74,12 +80,18 @@ public class Comedy extends Movie {
         isRomCom = romCom;
     }
 
-    //  Recommender Method that calculates funny rating and suggests to watch this movie if you want to laugh
+    /**
+     * Recommends a Comedy object movie based off of the numFunnyJokes, numBadJokes, and funnyRating attributes
+     * of the Comedy class, using numFunnyJokes and numBadJokes to calculate a funnyRating
+     * @return a string suggesting to the user to watch this if they want to have a laugh if the movie has a
+     * calculated funnyRating greater/equal to 65, and to watch if they like corny jokes if it is below 65
+     */
 
     public String recommender() {
-        funnyRating = (double)(numFunnyJokes)/(numFunnyJokes+numBadJokes);
-        String str = "This movie has " + numFunnyJokes + " funny jokes and " + numBadJokes + " bad jokes coming to a funny rating of " + funnyRating;
-        if(funnyRating >= 6.5) {
+        funnyRating = (double)(numFunnyJokes)/(numFunnyJokes+numBadJokes) * 100;
+        String str = "This movie has " + numFunnyJokes + " funny jokes and " + numBadJokes +
+                " bad jokes coming to a funny rating of " + funnyRating;
+        if(funnyRating >= 65) {
             str += "\nIf you are looking for a laugh, then this movie is for you";
         }
         else {

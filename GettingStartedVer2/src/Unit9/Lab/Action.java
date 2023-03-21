@@ -47,10 +47,18 @@ public class Action extends Movie {
         this.numFights = numFights;
         this.stuntsDoneByActor = stuntsDoneByActor;
     }
+
+    /**
+     * Creates a string of the attributes of an Action movie, formatted as an addition to the Movie class' toString
+     * but with more attributes specific to the Action class
+     * @return a string of attributes specific to the Action class, including mainProtagonist, mainAntagonist,
+     * and stuntsDoneByActor
+     */
     public String toString() {
         String str = "";
         str += super.toString();
-        str += "\nThe main character of this ACTION movie is " + mainProtagonist + ", and the main antagonist of this action movie is ";
+        str += "\nThe main character of this ACTION movie is " + mainProtagonist + ", and the main antagonist of " +
+                "this action movie is ";
         str += mainAntagonist + ".\n";
         if(stuntsDoneByActor) {
             str += " Most stunts were done by the starring actor";
@@ -60,9 +68,12 @@ public class Action extends Movie {
         }
         return str;
     }
-    // Recommender method that checks the amount of fights, and returns a value saying "If you're into really action-heavy
-    // scenes, you'll love this movie!" or
-    // "If you're into more plot and drama and less fighting, this is the film for you!"
+
+    /**
+     * Creates a recommendation of a specific action movie based off of its numFights attribute
+     * @return Recommendation string that suggests to watch if has > 6 fights and user likes action-heavy scenes
+     * & cinematics, and if < 6 suggests to watch if user likes more plot and drama in their movies
+     */
     public String recommender() {
         String ret = "";
         if(numFights > 6) {

@@ -17,6 +17,11 @@ public class Movie {
         this.isAnimated = isAnimated;
     }
 
+    /**
+     * Formats a string based off of the attributes of the generic Movie superclass
+     * @return A string of text containing information about the following atributes:
+     * title, hours, minutes, ageRating, and isAnimated
+     */
     public String toString() {
         String str = "The name of this film is " + title + ", and is " + hours + ":" + minutes + " long\n";
         str += "It's age rating is " + ageRating;
@@ -79,13 +84,19 @@ public class Movie {
 
     // Recommender method: below or above 7 for google rating
 
+    /**
+     * Creates a string with suggestions to watch or not watch based off of the Movie class' attribute googleRating
+     * @return a string recommending the movie to the user if googleRating is greater than/equal to 8.0,
+     * a string cautiously recommending the user if it is above 6.0 and below 8.0, and a string warning the user
+     * if it is below 6.0
+     */
     public String recommender() {
         String str;
         if(googleRating >= 8.0) {
             str="This movie is a blockbuster with a very high audience rating, so chances are you'll like this film!";
         }
         else if((googleRating>= 6.0) && (googleRating<8.0)) {
-            str="This movie has a mediocre audience rating, so you might not enjoy this film";
+            str="This movie has a mediocre audience rating, so you might not enjoy this film :(";
         }
         else {
             str="This movie is has a very low audience rating and is likely to be a flop, so we do not recommend this film.";
